@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Form Sampel PAP – Mekanik</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap">
+<style>
+:root{--bg:#eef1f5;--pn:#fff;--tx:#182634;--mu:#5b6b78;--ln:#dde3ea;--navy:#0b2f5e;--navy2:#123c78;--gold:#ffc72c;--goldd:#c98f00;--in:#fff;--ok:#2f7d4f;--rd:#c62828;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1721;--pn:#182634;--tx:#e7ecf1;--mu:#9fb0bd;--ln:#2b3a49;--navy:#123c78;--navy2:#1c4d94;--in:#0f1721;--ok:#5cc184;--rd:#ef7b7b}}
+:root[data-theme="dark"]{--bg:#0f1721;--pn:#182634;--tx:#e7ecf1;--mu:#9fb0bd;--ln:#2b3a49;--navy:#123c78;--navy2:#1c4d94;--in:#0f1721;--ok:#5cc184;--rd:#ef7b7b}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:14px/1.5 "Open Sans","Segoe UI",Arial,sans-serif}
+header{background:linear-gradient(120deg,var(--navy),var(--navy2));color:#fff;padding:14px 20px}
+.hin{display:flex;gap:12px;align-items:center;max-width:1180px;margin:0 auto}
+.lg{height:40px;width:40px;flex:none}.lg svg{height:100%;width:100%}
+h1{font:800 18px/1.2 "Open Sans",sans-serif;margin:0;text-transform:uppercase}h1 small{display:block;font:600 12px "Open Sans",sans-serif;text-transform:none;color:#dbe4f0;margin-top:2px}
+.stripe{height:5px;background:var(--gold)}
+main{max-width:1180px;margin:0 auto;padding:20px}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px}@media(max-width:840px){.grid{grid-template-columns:1fr}}
+.box{background:var(--pn);border:1px solid var(--ln);border-radius:10px;padding:18px;margin-bottom:18px;border-top:3px solid var(--navy)}
+h2{font:800 16px/1.2 "Open Sans",sans-serif;margin:0 0 12px;color:var(--navy);text-transform:uppercase}
+:root[data-theme="dark"] h2,:root:not([data-theme="light"]) h2{color:var(--gold)}
+@media(prefers-color-scheme:light){h2{color:var(--navy)}}
+label{display:block;font-size:12.5px;font-weight:700;margin:0 0 3px}
+input,select{width:100%;padding:8px 9px;border:1px solid var(--ln);border-radius:6px;background:var(--in);color:var(--tx);font:inherit}
+select{appearance:none;-webkit-appearance:none;-moz-appearance:none;background-image:url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235b6b78' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");background-repeat:no-repeat;background-position:right 10px center;background-size:16px;padding-right:32px;cursor:pointer}
+select:disabled,input:disabled{background-color:#eef1f5;cursor:not-allowed;opacity:.8;color:#5b6b78}
+input:focus,select:focus,button:focus-visible{outline:2px solid var(--gold);outline-offset:1px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}.f2>div{min-width:0}@media(max-width:520px){.f2{grid-template-columns:1fr}}
+.sec{font-weight:700;color:var(--navy);border-bottom:2px solid var(--gold);padding-bottom:2px;margin:6px 0 10px;text-transform:uppercase;font-size:12.5px}
+:root[data-theme="dark"] .sec,:root:not([data-theme="light"]) .sec{color:var(--gold)}
+@media(prefers-color-scheme:light){.sec{color:var(--navy)}}
+.btn{padding:10px 16px;border-radius:6px;border:2px solid var(--gold);background:var(--gold);color:var(--navy);cursor:pointer;font:700 13px "Open Sans",sans-serif}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;align-items:center}
+.paper-card{background:#fff;color:#111;border:1px solid #aaa;padding:14px;font:12px/1.4 Arial,sans-serif;margin-bottom:14px;border-radius:6px}
+.paper-card .ph{display:flex;gap:8px;align-items:center;border-bottom:2px solid #111;padding-bottom:5px;margin-bottom:6px}.paper-card .ph b{font-size:14px}
+.paper-card table{width:100%;border-collapse:collapse}.paper-card td{border-bottom:1px solid #ccc;padding:2px 4px}.paper-card td:first-child{width:42%;color:#333}
+.err{background:#fde0e0;color:#8a1c1c;border-radius:8px;padding:8px 12px;margin-top:10px;font-size:13px}
+.ok-msg{background:#e2f5e8;color:#1f5b39;border-radius:8px;padding:8px 12px;margin-top:10px;font-size:13px}
+table.l{width:100%;border-collapse:collapse}table.l th,table.l td{text-align:left;padding:7px 6px;border-bottom:1px solid var(--ln);font-size:12.5px}table.l th{color:var(--mu);font-weight:600}
+.tw{overflow-x:auto}
+.bd{display:inline-block;padding:2px 9px;border-radius:10px;font-size:11px;font-weight:700}
+.bd.ok{background:#d6efdd;color:#1f5b39}.bd.err{background:#fde0e0;color:#8a1c1c}.bd.wait{background:#fdf0cf;color:#8a6200}
+</style></head><body>
+<header><div class="hin" id="hdr"></div></header><div class="stripe"></div>
+<main id="app"></main>
+<script>
+const $=s=>document.querySelector(s),E=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+</script>
+<script>
+const KOMP=["Engine","Transmission","L. Final Drive","R. Final Drive","Hydraulic","Lainnya"],
+API_L=["","CD / CF","CF-4 / CG-4 / DH-1","CH-4 / CI-4","GL-4 / GL-5 / TO-4","HL / HLP / HVLP","Lainnya"],
+ANA=["Engine","Non Engine"],
+ALS=["Rutin / Routine","Unit Problem / Breakdown","Lainnya"];
+
+const today=()=>new Date().toISOString().slice(0,10);
+const fmt=d=>d?d.split("-").reverse().join("-"):"-";
+const UTMARK=`<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="United Tractors"><circle cx="50" cy="50" r="48" fill="#0b2f5e"/><circle cx="50" cy="50" r="48" fill="none" stroke="#ffc72c" stroke-width="3"/><text x="50" y="63" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="46" fill="#ffc72c" text-anchor="middle">UT</text></svg>`;
+document.getElementById("hdr").innerHTML=`<span class="lg">${UTMARK}</span><div><h1>Form Sampel PAP \u2014 Mekanik<small>Sistem Digitalisasi Dokumen Lapangan</small></h1></div>`;
+
+// === PENGATURAN: isi sebelum di-hosting ===
+// URL Web App dari Google Apps Script (Deploy > New deployment > Web app).
+const APPS_SCRIPT_URL="https://script.google.com/macros/s/AKfycbwXtboELwNN7iLguC4Si6sDcnjnd_cFUQR8Q8Xns9gOXsw8z66IEw6oC_Rrc9pd9MSS/exec";
+// Harus sama persis dengan TOKEN di Code.gs (pagar sederhana anti-spam, bukan pengaman kuat).
+const TOKEN="UT12345";
+let pendingId=null; // id kiriman; dipakai ulang kalau status belum pasti, supaya tidak dobel di sheet
+
+let draft={cust:"PT Bumi Sukses Indo",alamat:"Surabaya",merk:"Komatsu",model:"PC200-10M0",cn:"EX 33",sn:"SY021HCCQ1",lok:"Surabaya",komp:"Engine",kl:"",ob:"KGO",ot:"15W-40",api:"",hm:"12250",hmo:"",hmoil:"250",cons:"Normal",chg:"Diganti Baru / Replace",tgl:today(),oleh:"Mekanik",ana:"Engine",als:"Rutin / Routine",alsl:""};
+let sending=false, lastMsg=null, riwayat=[]; // riwayat: {waktu, cust, model, sn, status}
+
+function kompN(r){return r.komp=="Lainnya"?(r.kl||"Lainnya"):r.komp}
+
+function renderLabel(r){
+  const R=(a,b,c,d)=>`<tr><td>${a}</td><td>${b||"-"}</td><td>${c}</td><td>${d||"-"}</td></tr>`;
+  const chgYes=r.chg&&r.chg.startsWith("Diganti");
+  return `<div class="paper-card" id="print-label">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+      <div class="ph" style="margin:0;border:none;padding:0"><span style="width:24px;display:inline-block">${UTMARK}</span><b>Label Sampel PAP</b></div>
+      <button class="btn" style="padding:4px 10px;font-size:11px" onclick="cetakBagian('print-label')">\ud83d\udda8\ufe0f Cetak Label</button>
+    </div>
+    <table>
+      ${R("Cabang/Site",E(r.lok),"Component",E(kompN(r)))}
+      ${R("Customer",E(r.cust),"Oil Hours",r.hmoil!==""?E(r.hmoil)+" hrs":"")}
+      ${R("Unit",E(r.model),"Oil Type",E(r.ot))}
+      ${R("Serial Number",E(r.sn),"Oil Brand",E(r.ob))}
+      ${R("Code Number",E(r.cn),"Sampling Date",fmt(r.tgl))}
+      ${R("HM Unit",E(r.hm),"Oil Change",`${chgYes?"\u2611":"\u2610"} Yes &nbsp;${!chgYes?"\u2611":"\u2610"} No`)}
+    </table>
+  </div>`;
+}
+
+function renderPaper(r){
+  const R=(a,b)=>`<tr><td>${a}</td><td>${b||"-"}</td></tr>`;
+  return `<div class="paper-card" id="print-form">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+      <div class="ph" style="margin:0;border:none;padding:0"><span style="width:24px;display:inline-block">${UTMARK}</span><b>Formulir Program Analisa Pelumas</b></div>
+      <button class="btn" style="padding:4px 10px;font-size:11px" onclick="cetakBagian('print-form')">\ud83d\udda8\ufe0f Cetak Formulir</button>
+    </div>
+    <table>
+      ${R("Pemilik unit / customer",E(r.cust))}${R("Alamat / Address",E(r.alamat))}
+      ${R("1. Merk unit / Brand",E(r.merk))}${R("Model Unit / Type",E(r.model))}${R("2. Nomor / code unit",E(r.cn))}${R("Serial Number Unit",E(r.sn))}${R("3. Lokasi unit",E(r.lok))}
+      ${R("4. Tipe komponen",E(kompN(r)))}${R("5. Merk Pelumas",E(r.ob))}${R("Oil Type / SAE",E(r.ot))}${R("6. Kelas Pelumas / API",r.api?E(r.api):"")}
+      ${R("7. HM sejak baru",r.hm?E(r.hm)+" hours":"")}${R("8. HM sejak overhaul",r.hmo?E(r.hmo)+" hours":"")}${R("9. HM sejak ganti pelumas",r.hmoil!==""?E(r.hmoil)+" hours":"")}
+      ${R("10. Pemakaian pelumas",r.cons)}${R("11. Penggantian pelumas",E(r.chg))}${R("12. Tanggal sampel dibuat",fmt(r.tgl))}${R("13. Dibuat oleh, jabatan",E(r.oleh))}
+      ${R("14. Analisa yang diinginkan",E(r.ana))}${R("15. Alasan sampel diambil",r.als.startsWith("Lain")?E(r.alsl||"Lainnya"):E(r.als))}
+    </table>
+  </div>`;
+}
+
+function F(k,l,o,t="text",ds=false){
+  const v=E(draft[k]);
+  const dis=ds?"disabled":"";
+  if(o&&Array.isArray(o)){
+    return `<div><label>${l}</label><select data-k="${k}" ${dis}>${o.map(x=>`<option value="${x}" ${x==draft[k]?"selected":""}>${x==""?"-- Pilih --":x}</option>`).join("")}</select></div>`;
+  }
+  return `<div><label>${l}</label><input data-k="${k}" type="${t}" value="${v}" ${dis}></div>`;
+}
+
+function alasanN(r){return r.als.startsWith("Lain")?(r.alsl||"Lainnya"):r.als}
+// urutan = kolom A..Q di sheet 'Data PAP' (Tanggal sampai Dibuat_Oleh). Tanggal format ISO supaya dibaca sebagai tanggal oleh Excel/Sheets.
+function barisArr(r){return [r.tgl,r.cust,r.alamat,r.merk,r.model,r.cn,r.sn,r.lok,kompN(r),r.ob,r.ot,r.hm,r.hmoil,r.chg,r.ana,alasanN(r),r.oleh].map(v=>String(v??"").replace(/[\t\r\n]+/g," "))}
+function validasi(){
+  const d=draft, wajib=[["cust","Pemilik unit / customer"],["alamat","Alamat / lokasi ambil"],["merk","Merk unit"],["model","Model unit"],["lok","Lokasi unit"],["ob","Merk pelumas"],["ot","Oil type / SAE"],["hm","HM / KM unit"],["hmoil","HM sejak ganti pelumas"],["tgl","Tanggal sampel dibuat"]];
+  const kosong=wajib.filter(([k])=>!String(d[k]||"").trim()).map(([,n])=>n);
+  if(!d.cn && !d.sn) kosong.push("Nomor/code unit atau Serial number (isi salah satu)");
+  if(kosong.length) return "Belum lengkap: "+kosong.join(", ")+".";
+  if(d.hm && d.hmoil && +d.hmoil>+d.hm) return "HM sejak ganti pelumas harus lebih kecil dari HM unit.";
+  return "";
+}
+
+async function kirim(){
+  const err=validasi();
+  if(err){ lastMsg={t:"err",m:err}; render(); return; }
+  lastMsg=null; sending=true; render();
+  const jam=new Date().toLocaleTimeString("id-ID",{hour:"2-digit",minute:"2-digit"});
+  const entry={waktu:jam,cust:draft.cust,model:draft.model,sn:draft.sn,status:"wait"};
+  riwayat.unshift(entry); render();
+  try{
+    if(APPS_SCRIPT_URL.includes("MASUKKAN")) throw new Error("url");
+    pendingId=pendingId||(Date.now().toString(36)+Math.random().toString(36).slice(2,8));
+    const res=await fetch(APPS_SCRIPT_URL,{method:"POST",body:JSON.stringify({token:TOKEN,id:pendingId,nilai:barisArr(draft)})});
+    const j=await res.json();
+    if(j.status==="ok"){
+      entry.status="ok"; pendingId=null;
+      lastMsg={t:"ok",m:j.duplicate?"Data ini sudah masuk sebelumnya (tidak dobel).":"Data masuk ke spreadsheet"+(j.row?" (baris "+j.row+")":"")+"."};
+      draft={...draft,cn:"",sn:"",hm:"",hmoil:""};
+    }else{
+      entry.status="err";
+      lastMsg={t:"err",m:"Spreadsheet menolak data: "+(j.message||"alasan tidak diketahui")+". Data TIDAK tersimpan."};
+    }
+  }catch(err2){
+    if(err2&&err2.message==="url"){ entry.status="err"; lastMsg={t:"err",m:"URL Apps Script belum diisi di index.html (baris APPS_SCRIPT_URL)."}; }
+    else{ entry.status="unk"; lastMsg={t:"err",m:"Status belum pasti (koneksi putus atau balasan tidak terbaca). CEK SPREADSHEET dulu sebelum kirim ulang. Kalau tombol kirim ditekan lagi tanpa mengubah isian, sistem mencegah data dobel."}; }
+  }
+  sending=false; render();
+}
+
+function cetakBagian(id){
+  const targetHtml=document.getElementById(id).outerHTML;
+  const w=window.open('','_blank','width=800,height=600');
+  w.document.write(`<html><head><title>Cetak Dokumen</title><style>body{font-family:Arial,sans-serif;padding:20px}.paper-card{background:#fff;color:#111;border:1px solid #aaa;padding:14px;font:12px/1.4 Arial,sans-serif}.paper-card table{width:100%;border-collapse:collapse}.paper-card td{border-bottom:1px solid #ccc;padding:2px 4px}.paper-card td:first-child{width:42%;color:#333}.btn{display:none}</style></head><body>${targetHtml}</body></html>`);
+  w.document.close(); w.focus();
+  setTimeout(()=>{w.print();w.close();},250);
+}
+
+function render(){
+  $("#app").innerHTML=`
+  <div class="grid">
+    <div class="box"><h2>Isi Form Sampel (Mekanik)</h2>
+      <div class="sec">Unit &amp; pemilik</div>
+      <div class="f2">
+        ${F("cust","Pemilik unit / customer")}
+        ${F("alamat","Alamat / lokasi ambil")}
+        ${F("merk","Merk unit")}
+        ${F("model","Model unit")}
+        ${F("cn","Nomor / code unit")}
+        ${F("sn","Serial number unit")}
+        ${F("lok","Lokasi unit")}
+      </div>
+      <div class="sec">Pelumas &amp; komponen</div>
+      <div class="f2">
+        ${F("komp","Tipe komponen",KOMP)}
+        ${draft.komp=="Lainnya"?F("kl","Sebutkan tipe komponen lainnya"):""}
+        ${F("ob","Merk pelumas")}
+        ${F("ot","Oil type / SAE")}
+        ${F("api","Kelas pelumas / API (opsional)",API_L)}
+        ${F("hmo","HM sejak overhaul",null,"number")}
+      </div>
+      <div class="sec">Hour meter &amp; sampel</div>
+      <div class="f2">
+        ${F("hm","HM / KM unit",null,"number")}
+        ${F("hmoil","HM sejak ganti pelumas",null,"number")}
+        ${F("cons","Pemakaian pelumas",["Normal","Abnormal"])}
+        ${F("chg","Penggantian pelumas",["Diganti Baru / Replace","Tidak Diganti / No Replacement"])}
+        ${F("tgl","Tanggal sampel dibuat",null,"date")}
+        ${F("oleh","Dibuat oleh, jabatan")}
+        ${F("ana","Analisa yang diinginkan",ANA,"text",true)}
+        ${F("als","Alasan sampel diambil",ALS)}
+        ${draft.als.startsWith("Lain")?F("alsl","Sebutkan alasan lainnya"):""}
+      </div>
+      <div class="row"><button class="btn" id="kirim" ${sending?"disabled":""}>${sending?"Mengirim...":"Kirim ke Spreadsheet"}</button></div>
+      ${lastMsg?`<div class="${lastMsg.t=='ok'?'ok-msg':'err'}">${lastMsg.m}</div>`:""}
+    </div>
+    <div><div class="box">
+      <h2 style="margin-bottom:12px">Pratinjau Dokumen</h2>
+      <div id="prev">${renderLabel(draft)}${renderPaper(draft)}</div>
+    </div></div>
+  </div>
+
+  <div class="box"><h2>Status Pengiriman</h2>
+    <p style="font-size:12.5px;color:var(--mu);margin:0 0 10px">Daftar ini cuma tersimpan selama halaman ini terbuka (hilang kalau di-refresh) \u2014 cek Google Sheets untuk data yang pasti.</p>
+    <div class="tw"><table class="l"><tr><th>Jam</th><th>Customer</th><th>Model Unit</th><th>SN</th><th>Status</th></tr>
+    ${riwayat.length?riwayat.map(x=>`<tr><td>${x.waktu}</td><td>${E(x.cust)}</td><td>${E(x.model)}</td><td>${E(x.sn||"-")}</td><td><span class="bd ${x.status=='ok'?'ok':x.status=='err'?'err':'wait'}">${x.status=='ok'?'Terkirim':x.status=='err'?'Gagal':x.status=='unk'?'Belum pasti':'Mengirim...'}</span></td></tr>`).join(""):`<tr><td colspan="5">Belum ada yang dikirim.</td></tr>`}
+    </table></div>
+  </div>`;
+
+  document.querySelectorAll("[data-k]").forEach(i=>{
+    i.oninput=()=>{ draft[i.dataset.k]=i.value; pendingId=null; $("#prev").innerHTML=renderLabel(draft)+renderPaper(draft); };
+    i.onchange=()=>{
+      draft[i.dataset.k]=i.value; pendingId=null;
+      if(i.dataset.k==="komp"){ draft.ana=(i.value==="Engine")?"Engine":"Non Engine"; render(); }
+      else if(i.dataset.k==="als"){ render(); }
+    };
+  });
+  $("#kirim").onclick=kirim;
+}
+render();
+</script></body></html>
